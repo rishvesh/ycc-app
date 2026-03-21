@@ -40,12 +40,14 @@ export default function SignUpPage() {
       return
     }
 
+    const redirectUrl = process.env.NODE_ENV === "development" ? "https://localhost:3000/feed" : `${window.location.origin}/feed`;
+
     try {
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL || `${window.location.origin}/feed`,
+          emailRedirectTo: redirectUrl,
           data: {
             display_name: displayName,
             user_type: userType,

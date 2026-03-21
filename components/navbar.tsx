@@ -13,24 +13,33 @@ export default function Navbar() {
   const router = useRouter()
 
   useEffect(() => {
+    const supabase = createClient();
+
     const checkAuth = async () => {
-      const supabase = createClient()
       const { data } = await supabase.auth.getUser()
       setIsAuthenticated(!!data?.user)
       setIsLoading(false)
     }
-    checkAuth()
+    checkAuth();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setIsAuthenticated(!!session?.user)
+      setIsLoading(false)
+    })
 
     const savedTheme = localStorage.getItem("theme")
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
     const shouldBeDark = savedTheme === "dark" || (!savedTheme && prefersDark)
-    setIsDark(shouldBeDark)
+    setIsDark(shouldBeDark);
+
+    return () => {
+      subscription.unsubscribe()
+    }
   }, [])
 
   const handleSignOut = async () => {
     const supabase = createClient()
     await supabase.auth.signOut()
-    setIsAuthenticated(false)
     router.push("/")
   }
 
