@@ -57,40 +57,30 @@ export default function Navbar() {
   }
 
   return (
-    <header className="border-b border-border bg-card sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="text-2xl font-bold text-primary group-hover:text-primary/80 transition">YCC</div>
-          <div className="flex flex-col">
-            <p className="text-xs font-semibold text-foreground leading-none">Youth Collective</p>
-            <p className="text-xs text-muted-foreground">Council</p>
+    <header className="glass fixed top-0 w-full z-50 border-b border-white/10 shadow-lg backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="relative">
+            <div className="text-2xl font-bold gradient-text group-hover:opacity-80 transition-smooth">YCC</div>
+          </div>
+          <div className="flex flex-col hidden sm:block">
+            <p className="text-xs font-semibold text-foreground leading-none">Youth</p>
+            <p className="text-xs text-muted-foreground">Collective</p>
           </div>
         </Link>
 
-        <nav className="flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-1">
           {!isLoading && isAuthenticated && (
             <>
-              <Link href="/feed" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Feed
-              </Link>
-              <Link href="/explore" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Explore
-              </Link>
-              <Link href="/forum" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Forum
-              </Link>
-              <Link href="/messages" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Messages
-              </Link>
-              <Link href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Dashboard
-              </Link>
-              <Link href="/profile" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Profile
-              </Link>
+              <NavLink href="/feed">Feed</NavLink>
+              <NavLink href="/explore">Explore</NavLink>
+              <NavLink href="/forum">Forum</NavLink>
+              <NavLink href="/messages">Messages</NavLink>
+              <NavLink href="/dashboard">Dashboard</NavLink>
+              <NavLink href="/profile">Profile</NavLink>
               <button
                 onClick={handleSignOut}
-                className="text-sm text-muted-foreground hover:text-foreground transition"
+                className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Sign Out
               </button>
@@ -99,16 +89,21 @@ export default function Navbar() {
 
           {!isLoading && !isAuthenticated && (
             <>
-              <Link href="/explore" className="text-sm text-muted-foreground hover:text-foreground transition">
-                Explore
-              </Link>
+              <NavLink href="/explore">Explore</NavLink>
+            </>
+          )}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          {!isLoading && !isAuthenticated && (
+            <>
               <Link href="/auth/login">
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" className="border-white/20 hover:bg-white/10 transition-smooth">
                   Login
                 </Button>
               </Link>
               <Link href="/auth/sign-up">
-                <Button size="sm" className="bg-primary hover:bg-primary/90">
+                <Button size="sm" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-smooth text-background font-semibold">
                   Sign Up
                 </Button>
               </Link>
@@ -117,13 +112,22 @@ export default function Navbar() {
 
           <button
             onClick={toggleDarkMode}
-            className="ml-2 p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition"
+            className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-white/5 transition-smooth ml-2"
             aria-label="Toggle dark mode"
           >
             {isDark ? "☀️" : "🌙"}
           </button>
-        </nav>
+        </div>
       </div>
     </header>
+  )
+}
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={href} className="relative px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-smooth group">
+      {children}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
+    </Link>
   )
 }
