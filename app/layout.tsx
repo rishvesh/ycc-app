@@ -1,3 +1,4 @@
+
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -51,7 +52,9 @@ export default function RootLayout({
           }}
         />
         <Navbar />
-        {children}
+        <div className="mt-6">
+            {children}
+        </div>
         <Analytics />
       </body>
     </html>

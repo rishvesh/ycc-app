@@ -78,7 +78,7 @@ export default function Navbar() {
                 onClick={handleSignOut}
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
-                Sign Out
+                Signout
               </button>
             </>
           )}

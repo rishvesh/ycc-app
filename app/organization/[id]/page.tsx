@@ -25,26 +25,10 @@ export default async function OrganizationPage({ params }: { params: Promise<{ i
   const isOwner = user?.user?.id === org.created_by
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="border-b border-border bg-card sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-primary">YCC</div>
-          </Link>
-          <nav className="flex items-center gap-4">
-            <Link href="/explore" className="text-sm hover:text-primary transition">
-              Explore
-            </Link>
-            <Link href="/dashboard" className="text-sm hover:text-primary transition">
-              Dashboard
-            </Link>
-          </nav>
-        </div>
-      </header>
-
+    <div className="flex flex-col min-h-screen mt--6">
       <div className="flex-1">
         {/* Organization Header */}
-        <div className="bg-gradient-to-r from-accent/10 to-accent/5 border-b border-border py-8 px-4">
+        <div className="bg-gradient-to-r from-accent/10 to-accent/5 border-b border-border py-8 px-4 pt-20">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-start justify-between">
               <div>

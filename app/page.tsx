@@ -8,9 +8,6 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navbar spacing */}
-      <div className="h-20" />
-      
       {/* Hero */}
       <section className="flex-1 px-6 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
@@ -74,19 +71,19 @@ export default async function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="glass p-6">
-              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">10K+</div>
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">100+</div>
               <div className="text-sm text-muted-foreground">Active Volunteers</div>
             </div>
             <div className="glass p-6">
-              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">500+</div>
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">10+</div>
               <div className="text-sm text-muted-foreground">Organizations</div>
             </div>
             <div className="glass p-6">
-              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">50K+</div>
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">10K+</div>
               <div className="text-sm text-muted-foreground">Hours Served</div>
             </div>
             <div className="glass p-6">
-              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">100+</div>
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">500+</div>
               <div className="text-sm text-muted-foreground">Causes</div>
             </div>
           </div>
@@ -111,7 +108,7 @@ export default async function HomePage() {
       {/* Footer */}
       <footer className="border-t border-border px-6 py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 bg-1a1a1a">
             <div>
               <h3 className="font-semibold text-foreground mb-4 text-sm">Product</h3>
               <ul className="space-y-2 text-muted-foreground text-sm">
@@ -121,33 +118,8 @@ export default async function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-sm">Company</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-4 text-sm">Legal</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                <li><a href="#" className="hover:text-foreground transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Terms</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Cookies</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-4 text-sm">Connect</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                <li><a href="#" className="hover:text-foreground transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Instagram</a></li>
-              </ul>
-            </div>
           </div>
-          <div className="border-t border-border pt-8 text-center text-muted-foreground text-sm">
-            <p>© 2025 Youth Collective Council. Building community, one volunteer at a time.</p>
-          </div>
+        </div>
         </div>
       </footer>
     </div>
