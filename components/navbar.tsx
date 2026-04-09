@@ -57,19 +57,13 @@ export default function Navbar() {
   }
 
   return (
-    <header className="glass fixed top-0 w-full z-50 border-b border-white/10 shadow-lg backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative">
-            <div className="text-2xl font-bold gradient-text group-hover:opacity-80 transition-smooth">YCC</div>
-          </div>
-          <div className="flex flex-col hidden sm:block">
-            <p className="text-xs font-semibold text-foreground leading-none">Youth</p>
-            <p className="text-xs text-muted-foreground">Collective</p>
-          </div>
+    <header className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="text-xl font-semibold text-foreground">YCC</div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-8">
           {!isLoading && isAuthenticated && (
             <>
               <NavLink href="/feed">Feed</NavLink>
@@ -80,7 +74,7 @@ export default function Navbar() {
               <NavLink href="/profile">Profile</NavLink>
               <button
                 onClick={handleSignOut}
-                className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-smooth"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Sign Out
               </button>
@@ -94,16 +88,16 @@ export default function Navbar() {
           )}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           {!isLoading && !isAuthenticated && (
             <>
               <Link href="/auth/login">
-                <Button variant="outline" size="sm" className="border-white/20 hover:bg-white/10 transition-smooth">
+                <Button variant="outline" size="sm" className="rounded-lg hover:bg-muted transition-colors">
                   Login
                 </Button>
               </Link>
               <Link href="/auth/sign-up">
-                <Button size="sm" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-smooth text-background font-semibold">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium">
                   Sign Up
                 </Button>
               </Link>
@@ -112,7 +106,7 @@ export default function Navbar() {
 
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-white/5 transition-smooth ml-2"
+            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors ml-2"
             aria-label="Toggle dark mode"
           >
             {isDark ? "☀️" : "🌙"}
@@ -125,9 +119,8 @@ export default function Navbar() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="relative px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-smooth group">
+    <Link href={href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
       {children}
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
     </Link>
   )
 }

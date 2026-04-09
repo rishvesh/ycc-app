@@ -4,74 +4,74 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #0f0f1e;
-  --foreground: #f5f5f8;
-  --card: rgba(255, 255, 255, 0.08);
-  --card-foreground: #f5f5f8;
-  --popover: rgba(255, 255, 255, 0.1);
-  --popover-foreground: #f5f5f8;
-  --primary: #00d4ff;
-  --primary-foreground: #0f0f1e;
-  --secondary: #0099ff;
-  --secondary-foreground: #f5f5f8;
-  --muted: rgba(255, 255, 255, 0.1);
-  --muted-foreground: rgba(255, 255, 255, 0.6);
-  --accent: #00d4ff;
-  --accent-foreground: #0f0f1e;
-  --destructive: #ff3b30;
-  --destructive-foreground: #fff;
-  --border: rgba(255, 255, 255, 0.12);
-  --input: rgba(255, 255, 255, 0.06);
-  --ring: #00d4ff;
-  --chart-1: #00d4ff;
-  --chart-2: #0099ff;
-  --chart-3: #00c9ff;
-  --chart-4: #0088ff;
-  --chart-5: #00ffff;
-  --radius: 1rem;
-  --sidebar: rgba(255, 255, 255, 0.08);
-  --sidebar-foreground: #f5f5f8;
-  --sidebar-primary: #00d4ff;
-  --sidebar-primary-foreground: #0f0f1e;
-  --sidebar-accent: #0099ff;
-  --sidebar-accent-foreground: #f5f5f8;
-  --sidebar-border: rgba(255, 255, 255, 0.12);
-  --sidebar-ring: #00d4ff;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #f8f9fa;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #64748b;
+  --secondary-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #f1f5f9;
+  --ring: #2563eb;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #1e40af;
+  --chart-5: #1e3a8a;
+  --radius: 0.75rem;
+  --sidebar: #f8f9fa;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3b82f6;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #2563eb;
 }
 
 .dark {
-  --background: #0f0f1e;
-  --foreground: #f5f5f8;
-  --card: rgba(255, 255, 255, 0.08);
-  --card-foreground: #f5f5f8;
-  --popover: rgba(255, 255, 255, 0.1);
-  --popover-foreground: #f5f5f8;
-  --primary: #00d4ff;
-  --primary-foreground: #0f0f1e;
-  --secondary: #0099ff;
-  --secondary-foreground: #f5f5f8;
-  --muted: rgba(255, 255, 255, 0.1);
-  --muted-foreground: rgba(255, 255, 255, 0.6);
-  --accent: #00d4ff;
-  --accent-foreground: #0f0f1e;
-  --destructive: #ff3b30;
-  --destructive-foreground: #fff;
-  --border: rgba(255, 255, 255, 0.12);
-  --input: rgba(255, 255, 255, 0.06);
-  --ring: #00d4ff;
-  --chart-1: #00d4ff;
-  --chart-2: #0099ff;
-  --chart-3: #00c9ff;
-  --chart-4: #0088ff;
-  --chart-5: #00ffff;
-  --sidebar: rgba(255, 255, 255, 0.08);
-  --sidebar-foreground: #f5f5f8;
-  --sidebar-primary: #00d4ff;
-  --sidebar-primary-foreground: #0f0f1e;
-  --sidebar-accent: #0099ff;
-  --sidebar-accent-foreground: #f5f5f8;
-  --sidebar-border: rgba(255, 255, 255, 0.12);
-  --sidebar-ring: #00d4ff;
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --card: #141414;
+  --card-foreground: #f5f5f5;
+  --popover: #1a1a1a;
+  --popover-foreground: #f5f5f5;
+  --primary: #3b82f6;
+  --primary-foreground: #0a0a0a;
+  --secondary: #94a3b8;
+  --secondary-foreground: #f5f5f5;
+  --muted: #262626;
+  --muted-foreground: #a1a1a1;
+  --accent: #3b82f6;
+  --accent-foreground: #0a0a0a;
+  --destructive: #f87171;
+  --destructive-foreground: #0a0a0a;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #60a5fa;
+  --chart-3: #93c5fd;
+  --chart-4: #1d4ed8;
+  --chart-5: #1e40af;
+  --sidebar: #141414;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #60a5fa;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #3b82f6;
 }
 
 @theme inline {
@@ -121,81 +121,21 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(at 20% 50%, rgba(0, 212, 255, 0.15) 0px, transparent 50%), 
-                      radial-gradient(at 80% 80%, rgba(0, 153, 255, 0.15) 0px, transparent 50%);
   }
 }
 
 @layer components {
-  /* Glassmorphism base */
-  .glass {
-    @apply backdrop-blur-xl bg-card border border-border/50;
+  /* Clean cards */
+  .card-base {
+    @apply bg-card border border-border rounded-lg transition-all duration-200;
   }
 
-  /* Glassmorphism variations */
-  .glass-lg {
-    @apply backdrop-blur-2xl bg-card border border-border/40;
-  }
-
-  .glass-sm {
-    @apply backdrop-blur-lg bg-card border border-border/60;
-  }
-
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
+  .card-hover {
+    @apply card-base hover:shadow-sm hover:border-border/80;
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-@keyframes slide-in-from-top {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-from-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Subtle fade in */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -205,35 +145,6 @@
   }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-}
-
-.animate-slide-in-top {
-  animation: slide-in-from-top 0.5s ease-out;
-}
-
-.animate-slide-in-bottom {
-  animation: slide-in-from-bottom 0.5s ease-out;
-}
-
 .animate-fade-in {
-  animation: fade-in 0.5s ease-out;
-}
-
-/* Smooth transitions */
-.transition-smooth {
-  @apply transition-all duration-300 ease-out;
-}
-
-.transition-slower {
-  @apply transition-all duration-500 ease-out;
+  animation: fade-in 0.3s ease-in;
 }
