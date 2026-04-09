@@ -7,28 +7,28 @@ export default async function HomePage() {
   const { data } = await supabase.auth.getUser()
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen pt-20">
       {/* Hero */}
-      <section className="flex-1 bg-gradient-to-br from-background via-background to-accent/5 py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-              <span className="text-primary">Connect.</span> Volunteer. <span className="text-accent">Impact.</span>
+      <section className="flex-1 px-6 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-foreground">
+              Find your cause.<br />
+              Make an impact.
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join Pune's vibrant community. Find meaningful opportunities with organizations making a real difference
-              in our city.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Join Pune&apos;s growing community of changemakers. Discover meaningful volunteer opportunities and connect with organizations making real impact.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6">
             <Link href="/auth/sign-up">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors duration-200">
                 Get Started
               </Button>
             </Link>
             <Link href="/explore">
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="border-border hover:bg-muted text-foreground rounded-lg transition-colors duration-200">
                 Explore Opportunities
               </Button>
             </Link>
@@ -37,45 +37,126 @@ export default async function HomePage() {
       </section>
 
       {/* Features */}
-      <section className="py-16 px-4 max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl font-bold text-center mb-12">Why Join Youth Collective Council?</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition hover:border-accent/30">
-            <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4 text-xl font-semibold">
-              ✓
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Find Your Cause</h3>
-            <p className="text-muted-foreground text-sm">
-              Discover volunteer opportunities aligned with your passions and values
+      <section className="px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">Why join YCC?</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              A platform built for volunteers and organizations who care
             </p>
           </div>
-          <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition hover:border-accent/30">
-            <div className="w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4 text-xl font-semibold">
-              👥
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Connect & Collaborate</h3>
-            <p className="text-muted-foreground text-sm">
-              Join a vibrant community of volunteers and organization leaders
-            </p>
-          </div>
-          <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition hover:border-accent/30">
-            <div className="w-12 h-12 rounded-full bg-secondary/10 text-secondary-foreground flex items-center justify-center mb-4 text-xl font-semibold">
-              🌟
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Create Real Impact</h3>
-            <p className="text-muted-foreground text-sm">
-              Directly contribute to causes that matter in Pune and beyond
-            </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <FeatureCard
+              number="01"
+              title="Discover Opportunities"
+              description="Browse hundreds of volunteer roles that align with your passions and skills."
+            />
+            <FeatureCard
+              number="02"
+              title="Join a Community"
+              description="Connect with like-minded changemakers and build lasting relationships."
+            />
+            <FeatureCard
+              number="03"
+              title="Track Your Impact"
+              description="See the real-world difference your volunteering makes in Pune."
+            />
           </div>
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="glass p-6">
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">10K+</div>
+              <div className="text-sm text-muted-foreground">Active Volunteers</div>
+            </div>
+            <div className="glass p-6">
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">500+</div>
+              <div className="text-sm text-muted-foreground">Organizations</div>
+            </div>
+            <div className="glass p-6">
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">50K+</div>
+              <div className="text-sm text-muted-foreground">Hours Served</div>
+            </div>
+            <div className="glass p-6">
+              <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">100+</div>
+              <div className="text-sm text-muted-foreground">Causes</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-16 md:py-20 mb-20">
+        <div className="max-w-2xl mx-auto glass p-8 md:p-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">Ready to get started?</h2>
+          <p className="text-muted-foreground text-base md:text-lg mb-8">
+            Join thousands making a difference in our community.
+          </p>
+          <Link href="/auth/sign-up">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors duration-200">
+              Sign Up Today
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="border-t border-border bg-card py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-muted-foreground text-sm">
-          <p>© 2025 Youth Collective Council. Building a better Pune together.</p>
+      <footer className="border-t border-border px-6 py-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm">Product</h3>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li><Link href="/explore" className="hover:text-foreground transition-colors">Explore</Link></li>
+                <li><Link href="/forum" className="hover:text-foreground transition-colors">Community</Link></li>
+                <li><Link href="/feed" className="hover:text-foreground transition-colors">Feed</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm">Company</h3>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm">Legal</h3>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li><a href="#" className="hover:text-foreground transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Cookies</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 text-sm">Connect</h3>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li><a href="#" className="hover:text-foreground transition-colors">Twitter</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">LinkedIn</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-border pt-8 text-center text-muted-foreground text-sm">
+            <p>© 2025 Youth Collective Council. Building community, one volunteer at a time.</p>
+          </div>
         </div>
       </footer>
+    </div>
+  )
+}
+
+function FeatureCard({ number, title, description }: { number: string; title: string; description: string }) {
+  return (
+    <div className="glass-hover p-8">
+      <div className="text-sm font-semibold text-primary mb-3">{number}</div>
+      <h3 className="text-lg font-semibold text-foreground mb-3">{title}</h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
     </div>
   )
 }
