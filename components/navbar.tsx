@@ -59,8 +59,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 w-fit z-50 glass rounded-full border border-white/20 dark:border-white/10 px-6 py-2">
       <div className="flex items-center justify-between gap-8">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="text-lg font-semibold text-foreground">YCC</div>
+        <Link href="/">
+          <Button variant="ghost" size="sm" className="h-7 text-xs rounded-full font-medium">
+            Home
+          </Button>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -110,12 +112,20 @@ export default function Navbar() {
             aria-label="Toggle dark mode"
           >
             {isDark ? (
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 1 1 2.707 2.707a8.001 8.001 0 0 1 14.586 10.586z" />
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5" strokeWidth="2" />
+                <line x1="12" y1="1" x2="12" y2="3" strokeWidth="2" strokeLinecap="round" />
+                <line x1="12" y1="21" x2="12" y2="23" strokeWidth="2" strokeLinecap="round" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" strokeWidth="2" strokeLinecap="round" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" strokeWidth="2" strokeLinecap="round" />
+                <line x1="1" y1="12" x2="3" y2="12" strokeWidth="2" strokeLinecap="round" />
+                <line x1="21" y1="12" x2="23" y2="12" strokeWidth="2" strokeLinecap="round" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" strokeWidth="2" strokeLinecap="round" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" strokeWidth="2" strokeLinecap="round" />
               </svg>
             ) : (
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm8-8a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm-14 0a1 1 0 0 1-1 1H2a1 1 0 0 1 0-2h1a1 1 0 0 1 1 1zm11.586-4.414a1 1 0 0 0-1.414 0l-.707.707a1 1 0 0 0 1.414 1.414l.707-.707a1 1 0 0 0 0-1.414zm-7.07 7.07a1 1 0 0 0-1.414 0l-.707.707a1 1 0 0 0 1.414 1.414l.707-.707a1 1 0 0 0 0-1.414zm7.07 0a1 1 0 0 1 0 1.414l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0zM9.586 5.414a1 1 0 0 0-1.414 0L7.465 6.535a1 1 0 1 0 1.414 1.414l.707-.707a1 1 0 0 0 0-1.414zM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" clipRule="evenodd" />
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             )}
           </button>
