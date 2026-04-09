@@ -14,23 +14,28 @@ export const metadata: Metadata = {
   description: "Connect with organizations and volunteer for causes you care about",
   generator: "v0.app",
   icons: {
-    icon: [
+    apple: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
       },
     ],
-    apple: "/apple-icon.png",
+    icon: [
+      {
+        url: "/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+    ],
   },
+  manifest: "/site.webmanifest",
 }
+
 
 export default function RootLayout({
   children,
