@@ -6,7 +6,7 @@
 :root {
   --background: #ffffff;
   --foreground: #1a1a1a;
-  --card: #f8f9fa;
+  --card: #f5f7fb;
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
@@ -14,14 +14,14 @@
   --primary-foreground: #ffffff;
   --secondary: #64748b;
   --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
+  --muted: #f0f4f9;
   --muted-foreground: #64748b;
   --accent: #2563eb;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #f1f5f9;
+  --border: #dde4f0;
+  --input: #f0f4f9;
   --ring: #2563eb;
   --chart-1: #2563eb;
   --chart-2: #3b82f6;
@@ -121,6 +121,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(circle, rgba(37, 99, 235, 0.15) 1.5px, transparent 1.5px);
+    background-size: 35px 35px;
   }
 }
 

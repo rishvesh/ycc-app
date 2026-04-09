@@ -140,17 +140,7 @@ export default function ThreadPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b border-border bg-card sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-primary">YCC</div>
-          </Link>
-          <Link href="/forum" className="text-sm hover:text-primary transition">
-            Back to Forum
-          </Link>
-        </div>
-      </header>
-
+      <div className="h-20" />
       <div className="flex-1 max-w-4xl mx-auto w-full py-8 px-4">
         {thread && (
           <>

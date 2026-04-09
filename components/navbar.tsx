@@ -57,13 +57,15 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50 glass border-b border-white/20 dark:border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="text-xl font-semibold text-foreground">YCC</div>
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-fit z-50 glass rounded-full border border-white/20 dark:border-white/10 px-6 py-2">
+      <div className="flex items-center justify-between gap-8">
+        <Link href="/">
+          <Button variant="ghost" size="sm" className="h-7 text-xs rounded-full font-medium">
+            Home
+          </Button>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {!isLoading && isAuthenticated && (
             <>
               <NavLink href="/feed">Feed</NavLink>
@@ -74,7 +76,7 @@ export default function Navbar() {
               <NavLink href="/profile">Profile</NavLink>
               <button
                 onClick={handleSignOut}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Sign Out
               </button>
@@ -92,12 +94,12 @@ export default function Navbar() {
           {!isLoading && !isAuthenticated && (
             <>
               <Link href="/auth/login">
-                <Button variant="outline" size="sm" className="rounded-lg hover:bg-muted transition-colors">
+                <Button variant="outline" size="sm" className="rounded-full hover:bg-muted transition-colors h-8 px-3 text-xs">
                   Login
                 </Button>
               </Link>
               <Link href="/auth/sign-up">
-                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-colors font-medium h-8 px-3 text-xs">
                   Sign Up
                 </Button>
               </Link>
@@ -106,16 +108,24 @@ export default function Navbar() {
 
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/10 dark:hover:bg-white/10 transition-colors ml-2"
+            className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-white/10 dark:hover:bg-white/10 transition-colors"
             aria-label="Toggle dark mode"
           >
             {isDark ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.828-2.828a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm.707 2.828a1 1 0 01-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zm-2.828 2.828a1 1 0 01-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 16a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zm-4-4a1 1 0 100 2 1 1 0 000-2zm0-8a1 1 0 100 2 1 1 0 000-2zm8 0a1 1 0 100 2 1 1 0 000-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5" strokeWidth="2" />
+                <line x1="12" y1="1" x2="12" y2="3" strokeWidth="2" strokeLinecap="round" />
+                <line x1="12" y1="21" x2="12" y2="23" strokeWidth="2" strokeLinecap="round" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" strokeWidth="2" strokeLinecap="round" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" strokeWidth="2" strokeLinecap="round" />
+                <line x1="1" y1="12" x2="3" y2="12" strokeWidth="2" strokeLinecap="round" />
+                <line x1="21" y1="12" x2="23" y2="12" strokeWidth="2" strokeLinecap="round" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" strokeWidth="2" strokeLinecap="round" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" strokeWidth="2" strokeLinecap="round" />
               </svg>
             ) : (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             )}
           </button>
@@ -127,7 +137,7 @@ export default function Navbar() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+    <Link href={href} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
       {children}
     </Link>
   )

@@ -7,7 +7,10 @@ export default async function HomePage() {
   const { data } = await supabase.auth.getUser()
 
   return (
-    <div className="flex flex-col min-h-screen pt-20">
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar spacing */}
+      <div className="h-20" />
+      
       {/* Hero */}
       <section className="flex-1 px-6 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
@@ -23,12 +26,12 @@ export default async function HomePage() {
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6">
             <Link href="/auth/sign-up">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors duration-200">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-full transition-colors duration-200">
                 Get Started
               </Button>
             </Link>
             <Link href="/explore">
-              <Button size="lg" variant="outline" className="border-border hover:bg-muted text-foreground rounded-lg transition-colors duration-200">
+              <Button size="lg" variant="outline" className="border-border/80 hover:bg-white/30 dark:hover:bg-white/10 hover:border-border text-foreground rounded-full transition-colors duration-200">
                 Explore Opportunities
               </Button>
             </Link>
@@ -98,7 +101,7 @@ export default async function HomePage() {
             Join thousands making a difference in our community.
           </p>
           <Link href="/auth/sign-up">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors duration-200">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-full transition-colors duration-200">
               Sign Up Today
             </Button>
           </Link>
