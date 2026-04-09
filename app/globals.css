@@ -131,7 +131,7 @@
   }
 
   .card-hover {
-    @apply card-base hover:shadow-sm hover:border-border/80;
+    @apply bg-card border border-border rounded-lg transition-all duration-200 hover:shadow-sm hover:border-border/80;
   }
 }
 
