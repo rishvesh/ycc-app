@@ -70,19 +70,19 @@ export default async function HomePage() {
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-6 border border-border rounded-lg">
+            <div className="glass p-6">
               <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">10K+</div>
               <div className="text-sm text-muted-foreground">Active Volunteers</div>
             </div>
-            <div className="p-6 border border-border rounded-lg">
+            <div className="glass p-6">
               <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">500+</div>
               <div className="text-sm text-muted-foreground">Organizations</div>
             </div>
-            <div className="p-6 border border-border rounded-lg">
+            <div className="glass p-6">
               <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">50K+</div>
               <div className="text-sm text-muted-foreground">Hours Served</div>
             </div>
-            <div className="p-6 border border-border rounded-lg">
+            <div className="glass p-6">
               <div className="text-2xl md:text-3xl font-semibold text-primary mb-1">100+</div>
               <div className="text-sm text-muted-foreground">Causes</div>
             </div>
@@ -92,7 +92,7 @@ export default async function HomePage() {
 
       {/* CTA */}
       <section className="px-6 py-16 md:py-20 mb-20">
-        <div className="max-w-2xl mx-auto card-base p-8 md:p-12 text-center">
+        <div className="max-w-2xl mx-auto glass p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">Ready to get started?</h2>
           <p className="text-muted-foreground text-base md:text-lg mb-8">
             Join thousands making a difference in our community.
@@ -153,7 +153,7 @@ export default async function HomePage() {
 
 function FeatureCard({ number, title, description }: { number: string; title: string; description: string }) {
   return (
-    <div className="card-hover p-8 rounded-lg">
+    <div className="glass-hover p-8">
       <div className="text-sm font-semibold text-primary mb-3">{number}</div>
       <h3 className="text-lg font-semibold text-foreground mb-3">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>

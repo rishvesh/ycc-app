@@ -57,7 +57,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-sm">
+    <header className="fixed top-0 w-full z-50 glass border-b border-white/20 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="text-xl font-semibold text-foreground">YCC</div>
@@ -106,10 +106,18 @@ export default function Navbar() {
 
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors ml-2"
+            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/10 dark:hover:bg-white/10 transition-colors ml-2"
             aria-label="Toggle dark mode"
           >
-            {isDark ? "☀️" : "🌙"}
+            {isDark ? (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.828-2.828a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm.707 2.828a1 1 0 01-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zm-2.828 2.828a1 1 0 01-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 16a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zm-4-4a1 1 0 100 2 1 1 0 000-2zm0-8a1 1 0 100 2 1 1 0 000-2zm8 0a1 1 0 100 2 1 1 0 000-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            )}
           </button>
         </div>
       </div>

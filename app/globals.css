@@ -125,7 +125,16 @@
 }
 
 @layer components {
-  /* Clean cards */
+  /* Glass cards - sophisticated blur effect */
+  .glass {
+    @apply bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-xl transition-all duration-200;
+  }
+
+  .glass-hover {
+    @apply glass hover:bg-white/50 dark:hover:bg-white/8 hover:border-white/30 dark:hover:border-white/15 hover:shadow-lg;
+  }
+
+  /* Standard cards */
   .card-base {
     @apply bg-card border border-border rounded-lg transition-all duration-200;
   }
